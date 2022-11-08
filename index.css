@@ -60,15 +60,16 @@ header>h1 {
     font-weight: bold;
 }
 
-.result>p {
+.result >p {
     text-align: center;
 }
 
 .all-options {
-    align-items: center;
+    justify-content: center;
     margin-top: 150px;
     display:inline-block;
     margin: 20px;
+    margin-left: 450px;
 }
 
 .option {
