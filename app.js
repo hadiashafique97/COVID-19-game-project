@@ -1,4 +1,5 @@
-
+const playerDisplay = document.getElementById('player-display')
+const enemyDisplay = document.getElementById('enemy-display')
 const newGameButton = document.querySelector('#new-game-button')
 const human = document.getElementById('human') // my rock
 const vaccine = document.getElementById('vaccine') // my paper
@@ -12,7 +13,8 @@ let allOptions = document.querySelectorAll('.all-options') // all of the options
 const scoreBoard = document.querySelector('.score-board') // grabs my scoreboard
 let playerChoice
 let enemyChoice
-let randomNumber
+let randomNumber 
+
 newGameButton.addEventListener('click', startANewGame)
 
 function startANewGame() {
@@ -25,8 +27,8 @@ console.log('Hello')
 }
 
 function getResults() {
-    console.log(`enemy Choice is ${enemyChoice}`)
-    console.log(`my player chooses ${playerChoice}`)
+    playerDisplay.innerHTML = `${enemyChoice}`
+    enemyDisplay.innerHTML = ` ${playerChoice}`
     if (enemyChoice === playerChoice) {
         tie()
         result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`
@@ -86,3 +88,6 @@ function tie() {
     grabEnemyScore.innerHTML = theEnemyScore
     grabPlayerScore.innerHTML = myPlayerScore
 }
+
+
+// add what the enemy picks 

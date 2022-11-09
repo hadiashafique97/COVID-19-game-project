@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script src="app.js"defer></script>
+    <script src="app.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>THE PANDEMIC</h1>
@@ -15,23 +17,32 @@
     <div class="score-board">
         <div id="myplayer-label" class="tag">Player</div>
         <div id="enemy-label" class="tag">Enemy</div>
-        <span id="myplayer-score">0</span>:<span id="enemy-score">0</span><br><hr><span id="sbp">ScoreBoard</span>
+        <span id="myplayer-score">0</span>:<span id="enemy-score">0</span><br>
+        <hr><span id="sbp">ScoreBoard</span>
     </div>
 
-<div class="result-container">
-    <p class="result">Virus kills Human, You win!!!</p>
-</div>
-<div class ="all-options">
-    <div class="option" id="human">
-        <img src="images/human2.jpeg" alt="human">
+    <div class="result-container">
+        <p class="result">Welcome, Player choose your option to see if you have what it takes to BEAT COVID</p>
     </div>
-    <div class="option" id="vaccine">
-        <img src="images/vaccine2.jpeg" alt="vaccine">
+    <div class="all-options">
+        <div class="options-container">
+            <h2>Player Choice: <span id="player-display"></span></h2>
+            <div class="button-container">
+            <div class="option" id="human">
+                <img src="images/human2.jpeg" alt="human">
+            </div>
+            <div class="option" id="vaccine">
+                <img src="images/vaccine2.jpeg" alt="vaccine">
+            </div>
+            <div class="option" id="virus">
+                <img src="images/virus2.jpeg" alt="virus">
+            </div>
+        </div>
+            <h2>Enemy Choice:<span id="enemy-display"></span></h2>
+        </div>
+        <button class="new-game" id="new-game-button">New Game</button>
+        
     </div>
-    <div class="option" id="virus">
-        <img src="images/virus2.jpeg"  alt="virus">
-    </div>
-    <button class="new-game" id="new-game-button">New Game</button>
-</div>
 </body>
+
 </html>
