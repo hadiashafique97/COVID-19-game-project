@@ -22,10 +22,10 @@ function startANewGame() {
 
     myPlayerScore = 0
     theEnemyScore = 0
-    result.innerHTML = "Let'\s start a new game"
+    result.innerHTML = "Let'\s reset the Scoreboard and start fresh!!"
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-    playerDisplay.innerHTML = `Player Make your first move`
+    playerDisplay.innerHTML = `Make your first move`
     enemyDisplay.innerHTML = ``
 
 }
