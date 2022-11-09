@@ -5,11 +5,12 @@ const human = document.getElementById('human') // my rock
 const vaccine = document.getElementById('vaccine') // my paper
 const virus = document.getElementById('virus') // scissors
 let result = document.querySelector('.result') // this is the paragraph on the screen
-let myPlayerScore = 0 // my player on scoreboard
-let theEnemyScore = 0 // computers score on scoreboard
-const grabPlayerScore = document.getElementById("myplayer-score")
-const grabEnemyScore = document.getElementById("enemy-score")
-let allOptions = document.querySelectorAll('.all-options') // all of the options you can select
+let myPlayerScore = 0 //  player actual score on scoreboard
+let theEnemyScore = 0 // computers actual score score on scoreboard
+const grabPlayerScore = document.getElementById("myplayer-score") //grabbing my players score
+const grabEnemyScore = document.getElementById("enemy-score") //grabbing enemy score
+let allOptions = document.querySelectorAll('.all-options')
+let myButtons = document.querySelectorAll('.button-container') // all of the options you can select fixed to now only the pictures click 
 const scoreBoard = document.querySelector('.score-board') // grabs my scoreboard
 let playerChoice
 let enemyChoice
@@ -18,14 +19,14 @@ let randomNumber
 newGameButton.addEventListener('click', startANewGame)
 
 function startANewGame() {
-console.log('Hello')
+
     myPlayerScore = 0
     theEnemyScore = 0
+    result.innerHTML = "Let'\s start a new game"
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-    result.innerHTML
-    // playerDisplay.innerHTML = ``
-    // enemyDisplay.innerHTML ``
+    playerDisplay.innerHTML = `Player Make your first move`
+    enemyDisplay.innerHTML = ``
 
 }
 
@@ -63,7 +64,7 @@ function getResults() {
 }
 function gameRound() {
     //running my battles??
-    allOptions.forEach(option => option.addEventListener('click', (e) => {
+    myButtons.forEach(option => option.addEventListener('click', (e) => {
         playerChoice = e.target.id // so whatever i click i get the target id
         generateEnemyChoice()
         getResults()

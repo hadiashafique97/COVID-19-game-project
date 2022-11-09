@@ -83,12 +83,13 @@ header>h1 {
     margin: 20px;
 }
 
-.options-container{
+.options-container {
     width: 100%;
-    height: 100%;  
+    height: 100%;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
+
 }
 
 .option {
@@ -124,27 +125,27 @@ img {
     width: 100px;
     height: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+
 }
 
 #new-game-button:hover {
     transform: scale(1.1);
     background-color: cadetblue;
     border-radius: 10px;
-} 
+}
 
-#player-display{
+#player-display {
     display: flex;
     flex-direction: row;
 }
 
-#enemy-display{
+#enemy-display {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     text-align: end;
 }
 
-h2{
+h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
