@@ -1,5 +1,5 @@
 
-const newGameButton = document.querySelector('.new-game')
+const newGameButton = document.querySelector('#new-game-button')
 const human = document.getElementById('human') // my rock
 const vaccine = document.getElementById('vaccine') // my paper
 const virus = document.getElementById('virus') // scissors
@@ -13,11 +13,15 @@ const scoreBoard = document.querySelector('.score-board') // grabs my scoreboard
 let playerChoice
 let enemyChoice
 let randomNumber
+newGameButton.addEventListener('click', startANewGame)
 
 function startANewGame() {
-    newGameButton.addEventListener('click', () => {
-        // want the scoreboard to refresh 
-    })
+console.log('Hello')
+    myPlayerScore = 0
+    theEnemyScore = 0
+    grabPlayerScore.innerHTML = myPlayerScore
+    grabEnemyScore.innerHTML = theEnemyScore
+
 }
 
 function getResults() {
@@ -25,20 +29,20 @@ function getResults() {
     console.log(`my player chooses ${playerChoice}`)
     if (enemyChoice === playerChoice) {
         tie()
-        result.innerHTML = "It's a Tie! "
+        result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`
     }
     if (enemyChoice === 'human' && playerChoice === 'virus') {
         lose()
-        result.innerHTML = "Sorry you LOST, Better try again!! "
+        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
 
     }
     if (enemyChoice === 'virus' && playerChoice === 'vaccine') {
         lose()
-        result.innerHTML = "Sorry you LOST, Better try again!! "
+        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'human') {
         win()
-        result.innerHTML = "Great Job, YOU WIN!!!!! "
+        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
     }
 }
 function gameRound() {
@@ -72,14 +76,12 @@ function win() {
     grabEnemyScore.innerHTML = theEnemyScore
     console.log(myPlayerScore)
 }
-
 function lose() {
     theEnemyScore++
     grabEnemyScore.innerHTML = theEnemyScore
     grabPlayerScore.innerHTML = myPlayerScore
-    
-}
 
+}
 function tie() {
     grabEnemyScore.innerHTML = theEnemyScore
     grabPlayerScore.innerHTML = myPlayerScore
