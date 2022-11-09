@@ -23,28 +23,42 @@ console.log('Hello')
     theEnemyScore = 0
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
+    result.innerHTML
+    // playerDisplay.innerHTML = ``
+    // enemyDisplay.innerHTML ``
 
 }
 
 function getResults() {
-    playerDisplay.innerHTML = `${enemyChoice}`
-    enemyDisplay.innerHTML = ` ${playerChoice}`
+    playerDisplay.innerHTML = ` ${playerChoice}`
+    enemyDisplay.innerHTML = `${enemyChoice}`
     if (enemyChoice === playerChoice) {
         tie()
         result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`
     }
     if (enemyChoice === 'human' && playerChoice === 'virus') {
+        win()
+        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+    }
+    if (enemyChoice === 'human' && playerChoice === 'vaccine'){
         lose()
         result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
-
     }
     if (enemyChoice === 'virus' && playerChoice === 'vaccine') {
+        win()
+        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+    }
+    if(enemyChoice === 'virus' && playerChoice === 'human'){
         lose()
         result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'human') {
         win()
         result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+    }
+    if(enemyChoice === 'vaccine' && playerChoice === 'virus'){
+        lose()
+        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
     }
 }
 function gameRound() {
