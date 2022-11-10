@@ -25,41 +25,41 @@ function startANewGame() {
     result.innerHTML = "Let'\s reset the Scoreboard and start fresh!!"
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-    playerDisplay.innerHTML = `Make your first move`
+    playerDisplay.innerHTML = `Make your move`
     enemyDisplay.innerHTML = ``
 
 }
 
 function getResults() {
-    playerDisplay.innerHTML = ` ${playerChoice}`
-    enemyDisplay.innerHTML = `${enemyChoice}`
+    setTimeout(()=>{playerDisplay.innerHTML = ` ${playerChoice}`},100)
+    setTimeout(()=>{enemyDisplay.innerHTML = `${enemyChoice}`},100)
     if (enemyChoice === playerChoice) {
-        tie()
-        result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`
+        setTimeout(()=>{tie()},600)
+        setTimeout(()=>{result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`}, 600)
     }
     if (enemyChoice === 'human' && playerChoice === 'virus') {
-        win()
-        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+        setTimeout(()=>{win()},600)
+        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
     }
     if (enemyChoice === 'human' && playerChoice === 'vaccine'){
-        lose()
-        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
+        setTimeout(()=>{lose()},600)
+        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
     }
     if (enemyChoice === 'virus' && playerChoice === 'vaccine') {
-        win()
-        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+        setTimeout(()=>{win()},600)
+        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
     }
     if(enemyChoice === 'virus' && playerChoice === 'human'){
-        lose()
-        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
+        setTimeout(()=>{lose()},600)
+        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'human') {
-        win()
-        result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `
+        setTimeout(()=>{win()},600) 
+        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
     }
     if(enemyChoice === 'vaccine' && playerChoice === 'virus'){
-        lose()
-        result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `
+        setTimeout(()=>{lose()},600)
+        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
     }
 }
 function gameRound() {
