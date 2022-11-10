@@ -14,7 +14,11 @@ let myButtons = document.querySelectorAll('.button-container') // all of the opt
 const scoreBoard = document.querySelector('.score-board') // grabs my scoreboard
 let playerChoice
 let enemyChoice
-let randomNumber 
+let randomNumber
+const modalContainer = document.querySelector('.modal-container')
+const modal = document.querySelector(".modal")
+const closeButton = document.querySelector(".close-button")
+const modalPlay = document.querySelector(".modal-ok")
 
 newGameButton.addEventListener('click', startANewGame)
 
@@ -30,44 +34,58 @@ function startANewGame() {
 
 }
 
+let myModalCommands = {
+    toggleModal() {
+        modalContainer.classList.remove('hide') 
+    },
+    closeModal() {
+        modalContainer.classList.add('hide')
+    },
+}
+myModalCommands.closeModal()
+setTimeout(() => { myModalCommands.toggleModal() }, 1000)// to prompt the modal when page loads 
+// window.addEventListener("load", myModalCommands.toggleModal)
+modalPlay.addEventListener("click", myModalCommands.closeModal)
+closeButton.addEventListener("click", myModalCommands.closeModal)
+
 function getResults() {
-    setTimeout(()=>{playerDisplay.innerHTML = ` ${playerChoice}`},100)
-    setTimeout(()=>{enemyDisplay.innerHTML = `${enemyChoice}`},100)
+    setTimeout(() => { playerDisplay.innerHTML = ` ${playerChoice}` }, 100)
+    setTimeout(() => { enemyDisplay.innerHTML = `${enemyChoice}` }, 100)
     if (enemyChoice === playerChoice) {
-        setTimeout(()=>{tie()},600)
-        setTimeout(()=>{result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}`}, 600)
+        setTimeout(() => { tie() }, 600)
+        setTimeout(() => { result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}` }, 600)
     }
     if (enemyChoice === 'human' && playerChoice === 'virus') {
-        setTimeout(()=>{win()},600)
-        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
+        setTimeout(() => { win() }, 600)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
     }
-    if (enemyChoice === 'human' && playerChoice === 'vaccine'){
-        setTimeout(()=>{lose()},600)
-        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
+    if (enemyChoice === 'human' && playerChoice === 'vaccine') {
+        setTimeout(() => { lose() }, 600)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
     }
     if (enemyChoice === 'virus' && playerChoice === 'vaccine') {
-        setTimeout(()=>{win()},600)
-        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
+        setTimeout(() => { win() }, 600)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
     }
-    if(enemyChoice === 'virus' && playerChoice === 'human'){
-        setTimeout(()=>{lose()},600)
-        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
+    if (enemyChoice === 'virus' && playerChoice === 'human') {
+        setTimeout(() => { lose() }, 600)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'human') {
-        setTimeout(()=>{win()},600) 
-        setTimeout(()=>{result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! `},600)
+        setTimeout(() => { win() }, 600)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
     }
-    if(enemyChoice === 'vaccine' && playerChoice === 'virus'){
-        setTimeout(()=>{lose()},600)
-        setTimeout(()=>{result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! `},600)
+    if (enemyChoice === 'vaccine' && playerChoice === 'virus') {
+        setTimeout(() => { lose() }, 600)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
     }
 }
 function gameRound() {
-    //running my battles??
     myButtons.forEach(option => option.addEventListener('click', (e) => {
         playerChoice = e.target.id // so whatever i click i get the target id
         generateEnemyChoice()
         getResults()
+        changeTheBorder(playerChoice)
 
     }))
 }
@@ -91,7 +109,8 @@ function win() {
     myPlayerScore++
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-    console.log(myPlayerScore)
+
+
 }
 function lose() {
     theEnemyScore++
@@ -102,7 +121,29 @@ function lose() {
 function tie() {
     grabEnemyScore.innerHTML = theEnemyScore
     grabPlayerScore.innerHTML = myPlayerScore
+
 }
 
 
-// add what the enemy picks 
+
+// come back to this to get this to work 
+
+// function changeTheBorder(playerChoice) {
+//     console.log(playerChoice)
+//     if (playerChoice === win()) {
+//        console.log("hello")
+//         document.getElementById('human').classList.add('winner')
+//     } if (enemyChoice === win()) {
+//         enemyChoice.classList.add('winner')
+//     } if (playerChoice === lose()) {
+//         playerChoice.classList.add('loser')
+//     } if (enemyChoice === lose()) {
+//         enemyChoice.classList.add('loser')
+//     } if (enemyChoice === tie()) {
+//         enemyChoice.classList.add('draw')
+//     } if (playerChoice === tie())
+//         playerChoice.classList.add('draw')
+
+// }
+
+

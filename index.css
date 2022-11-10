@@ -15,12 +15,62 @@ header {
     font-size: 35px;
 }
 
+
 header>h1 {
     color: black;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+.modal-container {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top :0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.modal{
+    background-color:darkslategrey ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 10px 10px;
+
+}
+.hide{
+    pointer-events: none;
+    display: none;
+}
+.close-button {
+    float: right;
+    margin-top: auto;
+    align-self: flex-end;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: darkseagreen;
+}
+.modal-ok{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.modal-ok:hover {
+    background-color: darkgray;
+}
 .score-board {
     margin: 10px auto;
     border: 3px solid rgb(174, 37, 73);
@@ -107,6 +157,7 @@ header>h1 {
     transform: scale(1.1);
     box-shadow: 6px 6px 6px rgba(220, 115, 115, 0.593);
 }
+
 .text {
     display: none;
     color: rgb(12, 1, 1);
@@ -116,6 +167,7 @@ header>h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 200;
 }
+
 .option:hover .text {
     display: block;
     position: absolute;
@@ -170,3 +222,23 @@ img {
 h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+.winner {
+    border: 4px solid rgb(31, 185, 108);
+    box-shadow: 0 0 10px #31b43a;
+    background-color: yellow;
+    width: 2000px;
+}
+
+.loser {
+    border: 4px solid rgb(219, 28, 28);
+    box-shadow: 0 0 10px #7a1c1c;
+}
+
+.draw {
+    border: 4px solid rgb(117, 108, 108);
+    box-shadow: 0 0 10px #1c1717;
+}
+
+/* Add the top part back if you can figure out how to assign it to just one  */

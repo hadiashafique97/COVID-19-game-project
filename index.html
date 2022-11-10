@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>THE PANDEMIC</title>
     <link rel="stylesheet" href="index.css">
     <script src="app.js" defer></script>
 </head>
@@ -14,6 +14,8 @@
     <header>
         <h1>THE PANDEMIC</h1>
     </header>
+    
+    </div>
     <div class="score-board">
         <div id="myplayer-label" class="tag">Player</div>
         <div id="enemy-label" class="tag">Enemy</div>
@@ -28,23 +30,37 @@
         <div class="options-container">
             <h2>Player Choice: <span id="player-display"></span></h2>
             <div class="button-container">
-            <div class="option" id="human">
-                <img src="images/human2.jpeg" alt="human">
-                <div class="text">Human</div>
+                <div class="option" id="human">
+                    <img src="images/human2.jpeg" alt="human">
+                    <div class="text">Human</div>
+                </div>
+                <div class="option" id="vaccine">
+                    <img src="images/vaccine2.jpeg" alt="vaccine">
+                    <div class="text">Vaccine</div>
+                </div>
+                <div class="option" id="virus">
+                    <img src="images/virus2.jpeg" alt="virus">
+                    <div class="text">Virus</div>
+                </div>
             </div>
-            <div class="option" id="vaccine">
-                <img src="images/vaccine2.jpeg" alt="vaccine">
-                <div class="text">Vaccine</div>
-            </div>
-            <div class="option" id="virus">
-                <img src="images/virus2.jpeg" alt="virus">
-                <div class="text">Virus</div>
-            </div>
-        </div>
             <h2>Enemy Choice:<span id="enemy-display"></span></h2>
         </div>
         <button class="new-game" id="new-game-button">New Game</button>
     </div>
+<div class="modal-container">
+        <div class="modal">
+            <span class="close-button">&times</span>
+            <h1>INSTRUCTIONS</h1>
+            <p>Let's see if you're as lucky as you say you are.<br> Select your option to see if you win against the mastermind enemy COVID<br></p>
+            <ol>Things to keep in mind
+                <li>Human is defeated by Virus</li>
+                <li>Virus is defeated by Vaccine</li>
+                <li>Vaccine is defeated by Human</li>
+            </ol>
+            <p>You can also hit the new game button to refresh the Scoreboard and try again</p>
+            <p>GOODLUCK!!!</p>
+            <button class="modal-ok"> OK</button>
+        </div>
 </body>
 
 </html>
