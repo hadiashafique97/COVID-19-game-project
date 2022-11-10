@@ -20,15 +20,16 @@ const modal = document.querySelector(".modal")
 const closeButton = document.querySelector(".close-button")
 const modalPlay = document.querySelector(".modal-ok")
 const roundLimit = 15
-let currentRoundIndex = 0 
+let currentRoundIndex = 0
 const round = document.getElementById('sbp')
+let originalModalContent = document.querySelector('.modal-content').innerHTML
 
 
 
 newGameButton.addEventListener('click', startANewGame)
 
 function startANewGame() {
-
+    document.querySelector('.modal-content').innerHTML = originalModalContent
     myPlayerScore = 0
     theEnemyScore = 0
     result.innerHTML = "Let'\s reset the Scoreboard and start fresh!!"
@@ -44,7 +45,7 @@ function startANewGame() {
 
 let myModalCommands = {
     toggleModal() {
-        modalContainer.classList.remove('hide') 
+        modalContainer.classList.remove('hide')
     },
     closeModal() {
         modalContainer.classList.add('hide')
@@ -95,20 +96,25 @@ function gameRound() {
         getResults()
         currentRoundIndex++
         round.innerHTML = `Round:${currentRoundIndex}`
-        if(currentRoundIndex >= roundLimit){
+        if (currentRoundIndex >= roundLimit) {
             gameOver()
         }
     }))
 }
 gameRound()
 
-function gameOver(){
-    if(theEnemyScore > myPlayerScore){
-    alert(`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `)
+function gameOver() {
+    if (theEnemyScore > myPlayerScore) {
+        // alert(`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `)
+        myModalCommands.toggleModal()
+        document.querySelector('.modal-content').textContent =`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `
     }
-    if(myPlayerScore >theEnemyScore  ){
-        alert(`YOU'RE A WINNER ${myPlayerScore}:${theEnemyScore} `)
-        }
+    if (myPlayerScore > theEnemyScore) {
+        // alert(`YOU'RE A WINNER ${myPlayerScore}:${theEnemyScore} `)
+        myModalCommands.toggleModal()
+        document.querySelector('.modal-content').textContent =`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `
+        
+    }
 }
 
 function generateEnemyChoice() {

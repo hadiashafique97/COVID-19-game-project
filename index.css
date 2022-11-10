@@ -48,6 +48,13 @@ header>h1 {
     border-style: solid groove;
     border-color: rgb(192, 78, 75);
 }
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .hide{
     pointer-events: none;
     display: none;
