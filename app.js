@@ -61,32 +61,32 @@ function getResults() {
     setTimeout(() => { playerDisplay.innerHTML = ` ${playerChoice}` }, 100)
     setTimeout(() => { enemyDisplay.innerHTML = `${enemyChoice}` }, 100)
     if (enemyChoice === playerChoice) {
-        setTimeout(() => { tie() }, 600)
-        setTimeout(() => { result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}` }, 600)
+        setTimeout(() => { tie() }, 400)
+        setTimeout(() => { result.innerHTML = `It's a Tie! ${playerChoice} is equal to ${enemyChoice}` }, 400)
     }
     if (enemyChoice === 'human' && playerChoice === 'virus') {
-        setTimeout(() => { win() }, 600)
-        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
+        setTimeout(() => { win() }, 400)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 400)
     }
     if (enemyChoice === 'human' && playerChoice === 'vaccine') {
-        setTimeout(() => { lose() }, 600)
-        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
+        setTimeout(() => { lose() }, 400)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 400)
     }
     if (enemyChoice === 'virus' && playerChoice === 'vaccine') {
-        setTimeout(() => { win() }, 600)
-        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
+        setTimeout(() => { win() }, 400)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 400)
     }
     if (enemyChoice === 'virus' && playerChoice === 'human') {
-        setTimeout(() => { lose() }, 600)
-        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
+        setTimeout(() => { lose() }, 400)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 400)
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'human') {
-        setTimeout(() => { win() }, 600)
-        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 600)
+        setTimeout(() => { win() }, 400)
+        setTimeout(() => { result.innerHTML = `Great Job, ${playerChoice} beats ${enemyChoice} YOU WIN!!!!! ` }, 400)
     }
     if (enemyChoice === 'vaccine' && playerChoice === 'virus') {
-        setTimeout(() => { lose() }, 600)
-        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 600)
+        setTimeout(() => { lose() }, 400)
+        setTimeout(() => { result.innerHTML = `Sorry you LOST, ${enemyChoice} beats ${playerChoice} Better try again!! ` }, 400)
     }
 }
 function gameRound() {
@@ -97,7 +97,7 @@ function gameRound() {
         currentRoundIndex++
         round.innerHTML = `Round:${currentRoundIndex}`
         if (currentRoundIndex >= roundLimit) {
-            gameOver()
+            setTimeout(() => {gameOver()},500)
         }
     }))
 }
@@ -112,7 +112,7 @@ function gameOver() {
     if (myPlayerScore > theEnemyScore) {
         // alert(`YOU'RE A WINNER ${myPlayerScore}:${theEnemyScore} `)
         myModalCommands.toggleModal()
-        document.querySelector('.modal-content').textContent =`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `
+        document.querySelector('.modal-content').textContent =`YOU DID IT!!! ${myPlayerScore}:${theEnemyScore} `
         
     }
 }
