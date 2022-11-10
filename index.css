@@ -67,6 +67,7 @@ header>h1 {
     display: flex;
     justify-content: center;
     margin: 10px;
+    padding: 2px;
 }
 .close-button:hover {
     background-color: darkgray;

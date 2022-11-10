@@ -19,6 +19,11 @@ const modalContainer = document.querySelector('.modal-container')
 const modal = document.querySelector(".modal")
 const closeButton = document.querySelector(".close-button")
 const modalPlay = document.querySelector(".modal-ok")
+const roundLimit = 15
+let currentRoundIndex = 0 
+const round = document.getElementById('sbp')
+
+
 
 newGameButton.addEventListener('click', startANewGame)
 
@@ -29,7 +34,7 @@ function startANewGame() {
     result.innerHTML = "Let'\s reset the Scoreboard and start fresh!!"
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-    playerDisplay.innerHTML = `Make your move`
+    playerDisplay.innerHTML = `Choose`
     enemyDisplay.innerHTML = ``
     myModalCommands.toggleModal()
 
@@ -86,10 +91,23 @@ function gameRound() {
         playerChoice = e.target.id // so whatever i click i get the target id
         generateEnemyChoice()
         getResults()
-
+        currentRoundIndex++
+        round.innerHTML = `Round:${currentRoundIndex}`
+        if(currentRoundIndex >= roundLimit){
+            gameOver()
+        }
     }))
 }
 gameRound()
+
+function gameOver(){
+    if(theEnemyScore > myPlayerScore){
+    alert(`UH OH YOU LOST ${myPlayerScore}:${theEnemyScore} `)
+    }
+    if(myPlayerScore >theEnemyScore  ){
+        alert(`YOU'RE A WINNER ${myPlayerScore}:${theEnemyScore} `)
+        }
+}
 
 function generateEnemyChoice() {
     randomNumber = Math.floor(Math.random() * 3) // randomizing for the length of the all option
@@ -109,7 +127,6 @@ function win() {
     myPlayerScore++
     grabPlayerScore.innerHTML = myPlayerScore
     grabEnemyScore.innerHTML = theEnemyScore
-
 
 }
 function lose() {
