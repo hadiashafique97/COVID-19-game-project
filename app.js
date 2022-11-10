@@ -126,24 +126,5 @@ function tie() {
 
 
 
-// come back to this to get this to work 
-
-// function changeTheBorder(playerChoice) {
-//     console.log(playerChoice)
-//     if (playerChoice === win()) {
-//        console.log("hello")
-//         document.getElementById('human').classList.add('winner')
-//     } if (enemyChoice === win()) {
-//         enemyChoice.classList.add('winner')
-//     } if (playerChoice === lose()) {
-//         playerChoice.classList.add('loser')
-//     } if (enemyChoice === lose()) {
-//         enemyChoice.classList.add('loser')
-//     } if (enemyChoice === tie()) {
-//         enemyChoice.classList.add('draw')
-//     } if (playerChoice === tie())
-//         playerChoice.classList.add('draw')
-
-// }
 
 

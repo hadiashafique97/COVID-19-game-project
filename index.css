@@ -224,21 +224,4 @@ h2 {
 }
 
 
-.winner {
-    border: 4px solid rgb(31, 185, 108);
-    box-shadow: 0 0 10px #31b43a;
-    background-color: yellow;
-    width: 2000px;
-}
 
-.loser {
-    border: 4px solid rgb(219, 28, 28);
-    box-shadow: 0 0 10px #7a1c1c;
-}
-
-.draw {
-    border: 4px solid rgb(117, 108, 108);
-    box-shadow: 0 0 10px #1c1717;
-}
-
-/* Add the top part back if you can figure out how to assign it to just one  */
