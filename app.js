@@ -36,6 +36,8 @@ function startANewGame() {
     grabEnemyScore.innerHTML = theEnemyScore
     playerDisplay.innerHTML = `Choose`
     enemyDisplay.innerHTML = ``
+    currentRoundIndex = 0
+    round.innerHTML = `Round:${currentRoundIndex}`
     myModalCommands.toggleModal()
 
 }
