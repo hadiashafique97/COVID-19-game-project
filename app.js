@@ -86,7 +86,6 @@ function gameRound() {
         playerChoice = e.target.id // so whatever i click i get the target id
         generateEnemyChoice()
         getResults()
-        changeTheBorder(playerChoice)
 
     }))
 }
