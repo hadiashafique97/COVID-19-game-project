@@ -31,6 +31,7 @@ function startANewGame() {
     grabEnemyScore.innerHTML = theEnemyScore
     playerDisplay.innerHTML = `Make your move`
     enemyDisplay.innerHTML = ``
+    myModalCommands.toggleModal()
 
 }
 
