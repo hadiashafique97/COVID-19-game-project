@@ -1,6 +1,7 @@
-const playerDisplay = document.getElementById('player-display')
-const enemyDisplay = document.getElementById('enemy-display')
-const newGameButton = document.querySelector('#new-game-button')
+//#region global variables 
+const playerDisplay = document.getElementById('player-display') // players choice
+const enemyDisplay = document.getElementById('enemy-display') // enemy choice 
+const newGameButton = document.querySelector('#new-game-button') //the new game button 
 const human = document.getElementById('human') // my rock
 const vaccine = document.getElementById('vaccine') // my paper
 const virus = document.getElementById('virus') // scissors
@@ -23,6 +24,7 @@ const roundLimit = 15
 let currentRoundIndex = 0
 const round = document.getElementById('sbp')
 let originalModalContent = document.querySelector('.modal-content').innerHTML
+//#endregion 
 
 
 
