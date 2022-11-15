@@ -45,6 +45,6 @@ After the 15th round you can then scroll to the bottom of the page and hit the N
 
 I used a lot of resources to help me create my final project. 
 
-[stack overflow](https://stackoverflow.com/questions/17976883/rock-paper-scissors-in-javascript)
+- [stack overflow](https://stackoverflow.com/questions/17976883/rock-paper-scissors-in-javascript)
 
-[youtube](https://youtu.be/qWPtKtYEsN4)
+- [youtube](https://youtu.be/qWPtKtYEsN4)
