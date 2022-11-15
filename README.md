@@ -2,7 +2,7 @@
 ### By: Hadia Shafique
 ## Motivation
 
-My motivation for this project came from the game of rock, paper, scissors. I wanted to give the world a game that has been around for as long as we can imagine reinvisioned. For the past three years COVID has had such an impact on our daily lives, so I decided to implement a game we all grew up loving into something that are world is still facing today.
+My motivation for this project came from the game of [rock, paper, scissors](https://wrpsa.com/the-official-history-of-rock-paper-scissors/). I wanted to give the world a game that has been around for as long as we can imagine reinvisioned. For the past three years COVID has had such an impact on our daily lives, so I decided to implement a game we all grew up loving into something that are world is still facing today.
 
  Live link [THE PANDEMIC](https://hadiashafique97.github.io/COVID-19-game-project/)
 
@@ -43,8 +43,10 @@ After the 15th round you can then scroll to the bottom of the page and hit the N
 
 ## Acknowledgements
 
-I used a lot of resources to help me create my final project. 
+I used several resources to help me create my final project. 
 
 - [stack overflow](https://stackoverflow.com/questions/17976883/rock-paper-scissors-in-javascript)
 
-- [youtube](https://youtu.be/qWPtKtYEsN4)
+- [youtube video 1](https://youtu.be/qWPtKtYEsN4)
+
+- [youtube video 2](https://youtu.be/1yS-JV4fWqY)
